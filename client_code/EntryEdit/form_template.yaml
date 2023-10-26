@@ -15,6 +15,7 @@ components:
   layout_properties: {grid_position: 'YGGYWR,LEWIHF'}
   data_bindings:
   - {property: text, code: 'self.item[''name'']', writeback: false}
+  event_bindings: {}
 - type: Label
   properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
     text: Nombre de fois, font_size: null, font: '', spacing_above: small, icon_align: left,
@@ -23,7 +24,7 @@ components:
   name: label_2
   layout_properties: {grid_position: 'ESBUON,LKKCYX'}
 - type: TextArea
-  properties: {height: 36}
+  properties: {height: 41}
   name: content_box
   layout_properties: {grid_position: 'ESBUON,PJCXQE'}
   data_bindings:

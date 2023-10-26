@@ -7,7 +7,7 @@ services:
 startup: {type: form, module: Homepage}
 package_name: News_App
 allow_embedding: false
-name: Database-backed app
+name: test_counter
 runtime_options:
   version: 2
   client_version: '3'
