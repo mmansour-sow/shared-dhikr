@@ -4,7 +4,7 @@ container:
 components:
 - type: ColumnPanel
   properties: {role: elevated-card, tooltip: '', border: '', foreground: '', visible: true,
-    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{"UDUFKC":29,"VMBHUP":13,"YQCVDA":30,"FXYVIH":30,"TAHOSC":15,"PUZFVR":3,"XGUAPS":74,"UGUKIZ":3}',
+    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{"PUZFVR":3,"XGUAPS":72,"UGUKIZ":5}',
     spacing_below: small, background: ''}
   name: column_panel_1
   layout_properties: {grid_position: 'PAFXYP,FWHHIW'}
@@ -37,6 +37,14 @@ components:
     name: flow_panel_1
     layout_properties: {grid_position: 'MHWRRD,XGUAPS WAARJG,TAHOSC'}
     components:
+    - name: check_box_1
+      properties: {align: center, tooltip: Valider, allow_indeterminate: false, visible: true,
+        text: '', spacing_above: small, spacing_below: small, background: '#117e13',
+        checked: true}
+      type: CheckBox
+      layout_properties: {width: null, expand: false}
+      event_bindings: {change: check_box_1_change}
+      data_bindings: []
     - type: Button
       properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
         foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small,
@@ -53,22 +61,12 @@ components:
       name: delete_entry_button
       layout_properties: {}
       event_bindings: {click: delete_entry_button_click}
-  - type: Image
-    properties: {role: null, vertical_align: center, height: '200', tooltip: '', border: '',
-      foreground: '', visible: true, display_mode: fill_width, spacing_above: small,
-      source: '', spacing_below: small, background: '', horizontal_align: center}
-    name: image_1
-    layout_properties: {grid_position: 'MHWRRD,XGUAPS HJGZPT,YQCVDA'}
-    data_bindings:
-    - {property: source, code: 'self.item[''image'']'}
-  - type: Label
-    properties: {}
-    name: content_label
-    layout_properties: {grid_position: 'MHWRRD,XGUAPS HJGZPT,FXYVIH'}
-    data_bindings:
-    - {property: text, code: 'self.item[''content'']'}
   - type: Spacer
     properties: {height: 32}
     name: spacer_2
     layout_properties: {grid_position: 'MHWRRD,UGUKIZ'}
+  - name: outlined_button_1
+    properties: {text: outlined_button_1, role: outlined-button, icon: 'fa:check-circle-o'}
+    type: Button
+    layout_properties: {grid_position: 'ZBNKYB,VCWQBD'}
 is_package: true

@@ -40,4 +40,9 @@ class EntryView(EntryViewTemplate):
     if confirm(f"Are you sure you want to delete {self.item['title']}?"):
       self.parent.raise_event('x-delete-entry', entry=self.item)
 
+  def check_box_1_change(self, **event_args):
+    """This method is called when this checkbox is checked or unchecked"""
+    pass
+
+
 
