@@ -10,6 +10,5 @@ class EntryEdit(EntryEditTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run when the form opens.
-    self.entries = [(cat['name'], cat) for cat in app_tables.entries.search()]
 
 
