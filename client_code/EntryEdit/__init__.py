@@ -10,10 +10,6 @@ class EntryEdit(EntryEditTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run when the form opens.
-    self.categories = [(cat['name'], cat) for cat in app_tables.categories.search()]
-    self.category_box.items = self.categories
+    self.entries = [(cat['name'], cat) for cat in app_tables.entries.search()]
 
-  def image_uploader_change(self, file, **event_args):
-    """This method is called when a new file is loaded into this FileLoader"""
-    self.item['image'] = file
 
