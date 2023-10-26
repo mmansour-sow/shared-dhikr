@@ -45,14 +45,6 @@ components:
       name: edit_entry_button
       layout_properties: {grid_position: 'WAARJG,BDIJVO'}
       event_bindings: {click: edit_entry_button_click}
-    - type: Button
-      properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
-        foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small,
-        icon_align: left, spacing_below: small, italic: false, background: 'theme:Error',
-        bold: false, underline: false, icon: 'fa:trash'}
-      name: delete_entry_button
-      layout_properties: {}
-      event_bindings: {click: delete_entry_button_click}
   - type: Image
     properties: {role: null, vertical_align: center, height: '200', tooltip: '', border: '',
       foreground: '', visible: true, display_mode: fill_width, spacing_above: small,
@@ -61,6 +53,14 @@ components:
     layout_properties: {grid_position: 'MHWRRD,XGUAPS HJGZPT,YQCVDA'}
     data_bindings:
     - {property: source, code: 'self.item[''image'']'}
+  - type: Button
+    properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: 'theme:Error',
+      bold: false, underline: false, icon: 'fa:trash'}
+    name: delete_entry_button
+    layout_properties: {grid_position: 'MHWRRD,XGUAPS HJGZPT,YBRBGB'}
+    event_bindings: {click: delete_entry_button_click}
   - type: Label
     properties: {}
     name: content_label
