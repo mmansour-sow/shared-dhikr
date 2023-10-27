@@ -4,7 +4,7 @@ container:
 components:
 - type: ColumnPanel
   properties: {role: elevated-card, tooltip: '', border: '', foreground: '', visible: true,
-    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{"PUZFVR":3,"XGUAPS":72,"UGUKIZ":5,"UDUFKC":20,"VMBHUP":15,"TAHOSC":25}',
+    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{"PUZFVR":3,"XGUAPS":72,"UGUKIZ":5,"UDUFKC":20,"VMBHUP":15,"TAHOSC":25,"OOLDGM":25}',
     spacing_below: small, background: ''}
   name: column_panel_1
   layout_properties: {grid_position: 'PAFXYP,XDCIOW'}
@@ -31,32 +31,34 @@ components:
     layout_properties: {grid_position: 'MHWRRD,XGUAPS WAARJG,VMBHUP'}
     data_bindings:
     - {property: text, code: 'self.item[''count'']', writeback: false}
-  - type: FlowPanel
-    properties: {role: null, vertical_align: full, spacing: medium, align: right,
-      tooltip: '', border: '', foreground: '', visible: true, spacing_above: small,
-      spacing_below: small, background: ''}
-    name: flow_panel_1
-    layout_properties: {grid_position: 'MHWRRD,XGUAPS WAARJG,TAHOSC', full_width_row: false}
-    components:
-    - name: outlined_button_1
-      properties: {text: '', role: filled-button, icon: 'fa:check-circle-o'}
-      type: Button
-    - type: Button
-      properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
-        foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small,
-        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-        underline: false, icon: 'fa:pencil-square'}
-      name: edit_entry_button
-      layout_properties: {grid_position: 'WAARJG,BDIJVO'}
-      event_bindings: {click: edit_entry_button_click}
-    - type: Button
-      properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
-        foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small,
-        icon_align: left, spacing_below: small, italic: false, background: 'theme:Error',
-        bold: false, underline: false, icon: 'fa:trash'}
-      name: delete_entry_button
-      layout_properties: {expand: false}
-      event_bindings: {click: delete_entry_button_click}
+  - name: text_box_1
+    properties: {}
+    type: TextBox
+    layout_properties: {grid_position: 'MHWRRD,XGUAPS WAARJG,TAHOSC ZWETTX,HAKLCK
+        BSRLJK,BTJRNI'}
+  - name: outlined_button_1
+    properties: {text: '', role: filled-button, icon: 'fa:check-circle-o'}
+    type: Button
+    layout_properties: {grid_position: 'MHWRRD,XGUAPS WAARJG,TAHOSC ZWETTX,OOLDGM
+        UVHABM,KOGTVR'}
+  - type: Button
+    properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: 'fa:pencil-square'}
+    name: edit_entry_button
+    layout_properties: {grid_position: 'MHWRRD,XGUAPS WAARJG,TAHOSC ZWETTX,OOLDGM
+        LXNKOO,ILYUNS'}
+    event_bindings: {click: edit_entry_button_click}
+  - type: Button
+    properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: 'theme:Error',
+      bold: false, underline: false, icon: 'fa:trash'}
+    name: delete_entry_button
+    layout_properties: {grid_position: 'MHWRRD,XGUAPS WAARJG,TAHOSC ZWETTX,OOLDGM
+        JYMCAW,KIBPEP'}
+    event_bindings: {click: delete_entry_button_click}
   - type: Spacer
     properties: {height: 32}
     name: spacer_2
