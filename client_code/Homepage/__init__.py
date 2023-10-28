@@ -37,6 +37,9 @@ class Homepage(HomepageTemplate):
      # Load existing entries from the Data Table, 
      # and display them in the RepeatingPanel
      self.entries_panel.items = anvil.server.call('get_entries')
+     self.label_pris.text = anvil.server.call('get_total_count')
+     self.label_a_valider.text = anvil.server.call('get_total_remaining_to_validate')
+     self.label_valide.text = anvil.server.call('get_total_validated')
 
   def delete_entry(self, entry, **event_args):
     # Delete the entry
@@ -56,8 +59,6 @@ class Homepage(HomepageTemplate):
     """This method is called when the Label is shown on the screen"""
     self.label_valide.text = anvil.server.call('get_total_validated')
 
-  def refresh_labels(self):
-    self.label_a_valider_show()
 
 
 
