@@ -45,5 +45,10 @@ class EntryView(EntryViewTemplate):
     """This method is called when this checkbox is checked or unchecked"""
     pass
 
+  def label_user_validated_show(self, **event_args):
+    """This method is called when the Label is shown on the screen"""
+    self.label_user_validated.text = f"{self.item['validated']} / {self.item['count']} validés"
+
+
 
 

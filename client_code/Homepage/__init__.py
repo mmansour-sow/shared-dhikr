@@ -56,6 +56,9 @@ class Homepage(HomepageTemplate):
     """This method is called when the Label is shown on the screen"""
     self.label_valide.text = anvil.server.call('get_total_validated')
 
+  def refresh_labels(self):
+    self.label_a_valider_show()
+
 
 
 

@@ -11,7 +11,8 @@ import random
 def add_entry(entry_dict):
   app_tables.entries.add_row(
     created=datetime.now(),
-    **entry_dict
+    **entry_dict,
+    validated=0
   )
 
 @anvil.server.callable
