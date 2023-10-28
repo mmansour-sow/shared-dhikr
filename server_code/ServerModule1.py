@@ -55,3 +55,14 @@ def get_total_validated():
 def get_total_remaining_to_validate():
   return get_total_count() - get_total_validated()
 
+@anvil.server.callable
+def update_validated(entry, validated):
+  if app_tables.entries.has_row(entry):
+    if entry['validated'] + validated <= entry['count']:
+      entry['validated'] += validated
+      entry['updated'] = datetime.now()
+      entry.update()
+    else:
+      raise Exception("Validated count cannot be greater than total count")
+  else:
+    raise Exception("Entry does not exist")

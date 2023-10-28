@@ -41,13 +41,13 @@ class EntryView(EntryViewTemplate):
     if confirm(f"Are you sure you want to delete {self.item['name']}?"):
       self.parent.raise_event('x-delete-entry', entry=self.item)
 
-  def check_box_1_change(self, **event_args):
-    """This method is called when this checkbox is checked or unchecked"""
-    pass
-
   def label_user_validated_show(self, **event_args):
     """This method is called when the Label is shown on the screen"""
     self.label_user_validated.text = f"{self.item['validated']} / {self.item['count']} validés"
+
+  def validate_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    anvil.server.call('update_validated', self.item, self.text_box_1.text)
 
 
 
