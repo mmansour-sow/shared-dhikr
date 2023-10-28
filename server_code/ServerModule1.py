@@ -53,3 +53,4 @@ def get_total_validated():
 @anvil.server.callable
 def get_total_remaining_to_validate():
   return get_total_count() - get_total_validated()
+

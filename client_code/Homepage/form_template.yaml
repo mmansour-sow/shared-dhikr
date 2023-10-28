@@ -8,6 +8,15 @@ components:
   name: content_panel
   layout_properties: {slot: default}
   components:
+  - name: image_1
+    properties: {source: _/theme/test_file.jpg}
+    type: Image
+    layout_properties: {grid_position: 'XGXWIX,JQPLUI'}
+  - name: label_4
+    properties: {text: اللهم صل على سيدنا محمد الفاتح لما أغلق والخاتم لما سبق ناصر الحق بالحق والهادي إلى صراطك المستقيم وعلى آله حق قدره ومقداره العظيم.,
+      font_size: 40}
+    type: Label
+    layout_properties: {grid_position: 'MYESTE,XEPNTC'}
   - name: label_5
     properties: {text: Total pris}
     type: Label
