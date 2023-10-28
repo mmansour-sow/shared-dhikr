@@ -16,6 +16,7 @@ class Homepage(HomepageTemplate):
     self.refresh_entries()
       # Set an event handler on the RepeatingPanel (our 'entries_panel')
     self.entries_panel.set_event_handler('x-delete-entry', self.delete_entry)
+    self.entries_panel.set_event_handler('x-validated_button-clicked', self.label_pris_show)
 
   def add_entry_button_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -37,9 +38,7 @@ class Homepage(HomepageTemplate):
      # Load existing entries from the Data Table, 
      # and display them in the RepeatingPanel
      self.entries_panel.items = anvil.server.call('get_entries')
-     self.label_pris.text = anvil.server.call('get_total_count')
-     self.label_a_valider.text = anvil.server.call('get_total_remaining_to_validate')
-     self.label_valide.text = anvil.server.call('get_total_validated')
+     self.label_pris_show()
 
   def delete_entry(self, entry, **event_args):
     # Delete the entry
@@ -49,16 +48,18 @@ class Homepage(HomepageTemplate):
 
   def label_pris_show(self, **event_args):
     """This method is called when the Label is shown on the screen"""
-    self.label_pris.text = anvil.server.call('get_total_count')
+    # self.label_pris.text = anvil.server.call('get_total_count')
+    self.label_pris.text = f"""
+    Total pris:              {anvil.server.call('get_total_count')}
+    Restant à valider : {anvil.server.call('get_total_remaining_to_validate')}
+    Total validé :          {anvil.server.call('get_total_validated')}
+    """
 
-  def label_a_valider_show(self, **event_args):
-    """This method is called when the Label is shown on the screen"""
-    self.label_a_valider.text = anvil.server.call('get_total_remaining_to_validate')
-
-  def label_valide_show(self, **event_args):
-    """This method is called when the Label is shown on the screen"""
-    self.label_valide.text = anvil.server.call('get_total_validated')
-
+  def search(self, **event_args):
+    self.entries_panel.items = anvil.server.call(
+      'search_users',
+      self.text_box_search.text
+    )
 
 
 

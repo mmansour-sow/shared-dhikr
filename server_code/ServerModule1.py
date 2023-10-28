@@ -66,3 +66,13 @@ def update_validated(entry, validated):
       raise Exception("Validated count cannot be greater than total count")
   else:
     raise Exception("Entry does not exist")
+
+@anvil.server.callable
+def search_users(query):
+  result = app_tables.entries.search()
+  if query:
+    result = [
+      x for x in result
+      if query in x['name']
+    ]
+  return result

@@ -1,73 +1,81 @@
 container:
   type: ColumnPanel
-  properties: {col_widths: '{}'}
+  properties: {col_widths: '{}', wrap_on: never, foreground: ''}
 components:
 - type: ColumnPanel
   properties: {role: elevated-card, tooltip: '', border: '', foreground: '', visible: true,
-    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{"PUZFVR":3,"XGUAPS":72,"UGUKIZ":5,"UDUFKC":20,"VMBHUP":15,"TAHOSC":25,"OOLDGM":25}',
+    wrap_on: never, col_spacing: medium, spacing_above: small, col_widths: '{"PUZFVR":3,"XGUAPS":67,"UGUKIZ":5}',
     spacing_below: small, background: ''}
   name: column_panel_1
-  layout_properties: {grid_position: 'PAFXYP,XDCIOW'}
+  layout_properties: {grid_position: 'XFUFDG,YQRMZI'}
   components:
-  - type: Spacer
-    properties: {height: 32}
-    name: spacer_1
-    layout_properties: {grid_position: 'MHWRRD,PUZFVR'}
   - type: Label
     properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
       spacing_below: small, italic: false, background: '', bold: false, underline: false,
       icon: ''}
     name: Name
-    layout_properties: {grid_position: 'MHWRRD,XGUAPS WAARJG,UDUFKC RUAFTF,NFFOGI'}
+    layout_properties: {grid_position: 'WZOTKP,XRJCSR'}
     data_bindings:
     - {property: text, code: 'self.item[''name'']', writeback: false}
+  - type: Spacer
+    properties: {height: 32}
+    name: spacer_1
+    layout_properties: {grid_position: 'MHWRRD,PUZFVR'}
+  - name: label_a_faire
+    properties: {text: 'A faire:', bold: true, italic: true, underline: false, align: left,
+      foreground: 'theme:Primary'}
+    type: Label
+    layout_properties: {grid_position: 'MHWRRD,XGUAPS'}
+    event_bindings: {show: label_a_faire_show}
+    data_bindings: []
   - name: label_user_validated
     properties: {italic: true}
     type: Label
-    layout_properties: {grid_position: 'MHWRRD,XGUAPS WAARJG,UDUFKC QTXNTZ,HFTECA'}
+    layout_properties: {grid_position: 'MHWRRD,OEWZHN'}
     data_bindings: []
     event_bindings: {show: label_user_validated_show}
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
-      spacing_below: small, italic: false, background: '', bold: true, underline: false,
-      icon: ''}
-    name: Count
-    layout_properties: {grid_position: 'MHWRRD,XGUAPS WAARJG,VMBHUP'}
-    data_bindings:
-    - {property: text, code: 'self.item[''count'']', writeback: false}
-  - name: text_box_1
-    properties: {type: number}
-    type: TextBox
-    layout_properties: {grid_position: 'MHWRRD,XGUAPS WAARJG,TAHOSC ZWETTX,HAKLCK
-        BSRLJK,BTJRNI'}
-  - name: validate_button
-    properties: {text: '', role: filled-button, icon: 'fa:check-circle-o'}
-    type: Button
-    layout_properties: {grid_position: 'MHWRRD,XGUAPS WAARJG,TAHOSC ZWETTX,OOLDGM
-        UVHABM,KOGTVR'}
-    event_bindings: {click: validate_button_click}
-  - type: Button
-    properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
-      foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: 'fa:pencil-square'}
-    name: edit_entry_button
-    layout_properties: {grid_position: 'MHWRRD,XGUAPS WAARJG,TAHOSC ZWETTX,OOLDGM
-        LXNKOO,ILYUNS'}
-    event_bindings: {click: edit_entry_button_click}
-  - type: Button
-    properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
-      foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: 'theme:Error',
-      bold: false, underline: false, icon: 'fa:trash'}
-    name: delete_entry_button
-    layout_properties: {grid_position: 'MHWRRD,XGUAPS WAARJG,TAHOSC ZWETTX,OOLDGM
-        JYMCAW,KIBPEP'}
-    event_bindings: {click: delete_entry_button_click}
   - type: Spacer
     properties: {height: 32}
     name: spacer_2
     layout_properties: {grid_position: 'MHWRRD,UGUKIZ'}
+  - name: column_panel_3
+    properties: {}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'UAWJPE,IXVJLQ'}
+    components:
+    - name: column_panel_2
+      properties: {col_spacing: medium, wrap_on: never, col_widths: '{}', visible: true}
+      type: ColumnPanel
+      layout_properties: {grid_position: 'WTSMCY,RFQQDT'}
+      components:
+      - name: text_box_1
+        properties: {type: number}
+        type: TextBox
+        layout_properties: {grid_position: 'PMAVLP,QXKIQI'}
+      - name: validate_button
+        properties: {text: '', role: filled-button, icon: 'fa:check-circle-o'}
+        type: Button
+        layout_properties: {grid_position: 'PMAVLP,WPRFNT JODTZQ,QQDGEI'}
+        event_bindings: {click: validate_button_click}
+      - type: Button
+        properties: {role: outlined-button, align: center, tooltip: '', border: '',
+          enabled: true, foreground: '', visible: true, text: '', font_size: null,
+          font: '', spacing_above: small, icon_align: left, spacing_below: small,
+          italic: false, background: '', bold: false, underline: false, icon: 'fa:pencil-square'}
+        name: edit_entry_button
+        layout_properties: {grid_position: 'PMAVLP,WPRFNT SSXHHT,ETSDFF'}
+        event_bindings: {click: edit_entry_button_click}
+      - type: Button
+        properties: {role: filled-button, align: center, tooltip: '', border: '',
+          enabled: true, foreground: '', visible: true, text: '', font_size: null,
+          font: '', spacing_above: small, icon_align: left, spacing_below: small,
+          italic: false, background: 'theme:Error', bold: false, underline: false,
+          icon: 'fa:trash'}
+        name: delete_entry_button
+        layout_properties: {grid_position: 'PMAVLP,WPRFNT MLNTZB,LNOEUJ'}
+        event_bindings: {click: delete_entry_button_click}
+      data_bindings: []
+  event_bindings: {}
 is_package: true
+data_bindings: []

@@ -25,49 +25,36 @@ components:
         gamou inshallah. '}
     type: Label
     layout_properties: {grid_position: 'WYCIWQ,SXHZDC'}
-  - name: label_5
-    properties: {text: Total pris}
-    type: Label
-    layout_properties: {grid_position: 'RVXOBU,UPRFQK JNOUIK,BHWZKK'}
-  - name: column_panel_1
-    properties: {}
-    type: ColumnPanel
-    layout_properties: {grid_position: 'RVXOBU,UPRFQK GAEYCD,JERYOZ'}
-    components:
-    - name: label_2
-      properties: {text: Total restant à valider}
-      type: Label
-      layout_properties: {grid_position: 'AQQBZX,RTIUQF'}
-      data_bindings: []
-  - name: label_3
-    properties: {text: Total Validé}
-    type: Label
-    layout_properties: {grid_position: 'RVXOBU,UPRFQK SNBZJI,HXCOMQ'}
   - name: label_pris
-    properties: {}
+    properties: {bold: true, font_size: 24, background: 'theme:Secondary', foreground: 'theme:Surface'}
     type: Label
-    layout_properties: {grid_position: 'RVXOBU,QSOZRW LRPOCU,MUWJVY'}
+    layout_properties: {grid_position: 'LRPOCU,MUWJVY'}
     data_bindings: []
     event_bindings: {show: label_pris_show}
-  - name: label_a_valider
-    properties: {}
-    type: Label
-    layout_properties: {grid_position: 'RVXOBU,QSOZRW IKQYXD,DLWVYS'}
-    event_bindings: {show: label_a_valider_show}
-  - name: label_valide
-    properties: {}
-    type: Label
-    layout_properties: {grid_position: 'RVXOBU,QSOZRW RYGFJK,MXRKKL'}
-    event_bindings: {show: label_valide_show}
   - type: Button
     properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
-      foreground: '', visible: true, text: 'Add an Entry
+      foreground: '', visible: true, text: 'Nouveau
 
         ', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: large,
       italic: false, background: '', bold: false, underline: false, icon: 'fa:plus-circle'}
     name: add_entry_button
     layout_properties: {grid_position: 'CBFHGL,NKFPMX'}
     event_bindings: {click: add_entry_button_click}
+  - name: column_panel_1
+    properties: {col_widths: '{"GBJRNS":40,"UYVQVJ":20}'}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'DYAFLH,HRTLAU'}
+    components:
+    - name: text_box_search
+      properties: {}
+      type: TextBox
+      layout_properties: {grid_position: 'SCJZPF,GBJRNS'}
+      event_bindings: {pressed_enter: search}
+    - name: button_search
+      properties: {text: Search, icon: 'fa:search'}
+      type: Button
+      layout_properties: {grid_position: 'SCJZPF,UYVQVJ'}
+      event_bindings: {click: search}
   - type: RepeatingPanel
     properties: {role: null, tooltip: '', border: '', foreground: '', items: null,
       visible: true, spacing_above: small, spacing_below: small, item_template: EntryView,

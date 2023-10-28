@@ -11,7 +11,6 @@ class EntryView(EntryViewTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.parent_form = properties.get('parent')
 
     # Any code you write here will run when the form opens.
 
@@ -48,8 +47,17 @@ class EntryView(EntryViewTemplate):
 
   def validate_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    anvil.server.call('update_validated', self.item, self.text_box_1.text)
-    self.parent_form.refresh_entries()
+    if self.text_box_1.text:
+      anvil.server.call('update_validated', self.item, self.text_box_1.text)
+      self.label_user_validated.text = f"{self.item['validated']} / {self.item['count']} validés"
+      self.parent.raise_event('x-validated_button-clicked')
+    else:
+      pass
+
+  def label_a_faire_show(self, **event_args):
+    """This method is called when the Label is shown on the screen"""
+    self.label_a_faire.text = f"""{self.label_a_faire.text}
+    {self.item['count']}"""
 
 
 
