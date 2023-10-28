@@ -44,3 +44,19 @@ class Homepage(HomepageTemplate):
     # Refresh entry to remove the deleted entry from the Homepage
     self.refresh_entries()
 
+  def label_pris_show(self, **event_args):
+    """This method is called when the Label is shown on the screen"""
+    self.label_pris.text = anvil.server.call('get_total_count')
+
+  def label_a_valider_show(self, **event_args):
+    """This method is called when the Label is shown on the screen"""
+    self.label_a_valider.text = anvil.server.call('get_total_remaining_to_validate')
+
+  def label_valide_show(self, **event_args):
+    """This method is called when the Label is shown on the screen"""
+    self.label_valide.text = anvil.server.call('get_total_validated')
+
+
+
+
+

@@ -8,6 +8,10 @@ components:
   name: content_panel
   layout_properties: {slot: default}
   components:
+  - name: label_5
+    properties: {text: Total pris}
+    type: Label
+    layout_properties: {grid_position: 'RVXOBU,UPRFQK JNOUIK,BHWZKK'}
   - name: column_panel_1
     properties: {}
     type: ColumnPanel
@@ -22,16 +26,22 @@ components:
     properties: {text: Total Validé}
     type: Label
     layout_properties: {grid_position: 'RVXOBU,UPRFQK SNBZJI,HXCOMQ'}
-  - name: text_box_1
+  - name: label_pris
     properties: {}
-    type: TextBox
-    layout_properties: {grid_position: 'RVXOBU,QSOZRW IFJKXS,TXTGHR'}
-    data_bindings:
-    - {property: text, code: 'self.item['''']', writeback: true}
-  - name: text_box_2
+    type: Label
+    layout_properties: {grid_position: 'RVXOBU,QSOZRW LRPOCU,MUWJVY'}
+    data_bindings: []
+    event_bindings: {show: label_pris_show}
+  - name: label_a_valider
     properties: {}
-    type: TextBox
-    layout_properties: {grid_position: 'RVXOBU,QSOZRW QFLCZX,JZXQAA'}
+    type: Label
+    layout_properties: {grid_position: 'RVXOBU,QSOZRW IKQYXD,DLWVYS'}
+    event_bindings: {show: label_a_valider_show}
+  - name: label_valide
+    properties: {}
+    type: Label
+    layout_properties: {grid_position: 'RVXOBU,QSOZRW RYGFJK,MXRKKL'}
+    event_bindings: {show: label_valide_show}
   - type: Button
     properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
       foreground: '', visible: true, text: 'Add an Entry

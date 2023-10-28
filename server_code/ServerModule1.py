@@ -4,6 +4,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
 from datetime import datetime
+import random
 
 
 @anvil.server.callable
@@ -36,3 +37,19 @@ def delete_entry(entry):
     entry.delete()
   else:
     raise Exception("Entry does not exist")
+
+@anvil.server.callable
+def get_total_count():
+  return sum([entry['count'] if entry['count'] is not None else 0 
+              for entry in app_tables.entries.search()
+             ])
+
+@anvil.server.callable
+def get_total_validated():
+  return sum([entry['validated'] if entry['validated'] is not None else 0 
+              for entry in app_tables.entries.search()
+             ])
+
+@anvil.server.callable
+def get_total_remaining_to_validate():
+  return get_total_count() - get_total_validated()
