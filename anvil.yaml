@@ -11,13 +11,18 @@ services:
 startup: {type: form, module: Homepage}
 package_name: News_App
 allow_embedding: false
-name: test_counter
+name: mawlid
 runtime_options:
   version: 2
   client_version: '3'
   server_version: python3-sandbox
   server_spec: null
   server_spec_disabled: {requirements: '', base: python310-minimal}
+metadata: {title: Hadra tijani toulouse, logo_img: 'asset:test_file-logo.jpeg', description: 'Assalamu
+    aleykoum à toute la Zawiya  En parallèle de la lecture du coran qui sera initiée
+    à l’occasion du gamou de Toulouse (le 18 Nov inshallah), nous avons prévu de faire
+    hadiya au Prophète Mouhammad PSL en récitant 124.000 salatoul fatikha. La récitation
+    commence ce soir et sera clôturé le soir du gamou inshallah. '}
 startup_form: null
 db_schema:
   entries:
