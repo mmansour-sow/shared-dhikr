@@ -23,8 +23,8 @@ components:
     name: spacer_1
     layout_properties: {grid_position: 'MHWRRD,PUZFVR'}
   - name: label_a_faire
-    properties: {text: 'A faire:', bold: true, italic: true, underline: false, align: left,
-      foreground: 'theme:Primary'}
+    properties: {text: 'Salatul Fatihi:', bold: true, italic: true, underline: false,
+      align: left, foreground: 'theme:Primary'}
     type: Label
     layout_properties: {grid_position: 'MHWRRD,XGUAPS'}
     event_bindings: {show: label_a_faire_show}

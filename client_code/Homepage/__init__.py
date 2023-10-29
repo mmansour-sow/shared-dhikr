@@ -17,6 +17,7 @@ class Homepage(HomepageTemplate):
       # Set an event handler on the RepeatingPanel (our 'entries_panel')
     self.entries_panel.set_event_handler('x-delete-entry', self.delete_entry)
     self.entries_panel.set_event_handler('x-validated_button-clicked', self.label_pris_show)
+    self.entries_panel.set_event_handler('x-edit-entry', self.label_pris_show)
 
   def add_entry_button_click(self, **event_args):
     """This method is called when the button is clicked"""

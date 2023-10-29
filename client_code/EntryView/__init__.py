@@ -32,6 +32,7 @@ class EntryView(EntryViewTemplate):
   
       # Now refresh the page
       self.refresh_data_bindings()
+      self.parent.raise_event('x-edit-entry')
 
   def delete_entry_button_click(self, **event_args):
     """This method is called when the button is clicked"""
