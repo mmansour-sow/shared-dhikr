@@ -28,7 +28,8 @@ components:
     type: Label
     layout_properties: {grid_position: 'MHWRRD,XGUAPS'}
     event_bindings: {show: label_a_faire_show}
-    data_bindings: []
+    data_bindings:
+    - {property: text, code: self.label_a_faire_show, writeback: false}
   - name: label_user_validated
     properties: {italic: true}
     type: Label

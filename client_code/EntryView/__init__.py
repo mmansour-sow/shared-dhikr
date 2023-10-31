@@ -60,6 +60,9 @@ class EntryView(EntryViewTemplate):
     self.label_a_faire.text = f"""{self.label_a_faire.text}
     {self.item['count']}"""
 
+  def get_item_count(self):
+    return self.item['count']
+
 
 
 
