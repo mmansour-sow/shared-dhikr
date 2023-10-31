@@ -33,6 +33,7 @@ class EntryView(EntryViewTemplate):
       # Now refresh the page
       self.refresh_data_bindings()
       self.parent.raise_event('x-edit-entry')
+      self.raise_event('xview-edit-entry', entry_copy)
 
   def delete_entry_button_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -50,18 +51,16 @@ class EntryView(EntryViewTemplate):
     """This method is called when the button is clicked"""
     if self.text_box_1.text:
       anvil.server.call('update_validated', self.item, self.text_box_1.text)
-      self.label_user_validated.text = f"{self.item['validated']} / {self.item['count']} validés"
+      # self.label_user_validated.text = f"{self.item['validated']} / {self.item['count']} validés"
       self.parent.raise_event('x-validated_button-clicked')
     else:
       pass
 
-  def label_a_faire_show(self, **event_args):
+  def label_a_faire_show(self, count=self.item['count'], **event_args):
     """This method is called when the Label is shown on the screen"""
     self.label_a_faire.text = f"""{self.label_a_faire.text}
-    {self.item['count']}"""
+    {count}"""
 
-  def get_item_count(self):
-    return self.item['count']
 
 
 
