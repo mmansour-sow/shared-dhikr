@@ -4,7 +4,7 @@ container:
 components:
 - type: ColumnPanel
   properties: {role: elevated-card, tooltip: '', border: '', foreground: '', visible: true,
-    wrap_on: never, col_spacing: medium, spacing_above: small, col_widths: '{"PUZFVR":3,"XGUAPS":67,"UGUKIZ":5}',
+    wrap_on: never, col_spacing: medium, spacing_above: small, col_widths: '{"PUZFVR":3,"XGUAPS":47,"UGUKIZ":5,"EYCLQH":35}',
     spacing_below: small, background: ''}
   name: column_panel_1
   layout_properties: {grid_position: 'XFUFDG,YQRMZI'}
@@ -22,20 +22,50 @@ components:
     properties: {height: 32}
     name: spacer_1
     layout_properties: {grid_position: 'MHWRRD,PUZFVR'}
-  - name: label_a_faire
-    properties: {text: 'Salatul Fatihi:', bold: true, italic: true, underline: false,
-      align: left, foreground: 'theme:Primary'}
-    type: Label
+  - name: data_row_panel_1
+    properties: {}
+    type: DataRowPanel
     layout_properties: {grid_position: 'MHWRRD,XGUAPS'}
-    event_bindings: {show: label_a_faire_show}
-    data_bindings:
-    - {property: text, code: self.label_a_faire_show, writeback: false}
-  - name: label_user_validated
-    properties: {italic: true}
-    type: Label
-    layout_properties: {grid_position: 'MHWRRD,OEWZHN'}
-    data_bindings: []
-    event_bindings: {show: label_user_validated_show}
+    components:
+    - name: label_a_faire
+      properties: {text: 'Salatul Fatihi:', bold: true, italic: true, underline: false,
+        align: left, foreground: 'theme:Primary'}
+      type: Label
+      layout_properties: {}
+      event_bindings: {}
+      data_bindings: []
+    - name: label_4
+      properties: {}
+      type: Label
+      layout_properties: {}
+      data_bindings:
+      - {property: text, code: 'self.item[''count'']', writeback: false}
+  - name: column_panel_4
+    properties: {col_widths: '{"MILTGK":14,"JRTKZO":7,"MOZRAQ":17}', wrap_on: never}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'MHWRRD,EYCLQH'}
+    components:
+    - name: label_2
+      properties: {text: 'validés:', italic: true}
+      type: Label
+      layout_properties: {grid_position: 'QMGXVU,ANBEVC'}
+    - name: label_user_validated
+      properties: {italic: true}
+      type: Label
+      layout_properties: {grid_position: 'OADPAO,MILTGK', full_width_row: false}
+      data_bindings:
+      - {property: text, code: 'self.item[''validated'']', writeback: false}
+      event_bindings: {}
+    - name: label_3
+      properties: {text: /, italic: true, align: center}
+      type: Label
+      layout_properties: {grid_position: 'OADPAO,JRTKZO'}
+    - name: label_1
+      properties: {}
+      type: Label
+      layout_properties: {grid_position: 'OADPAO,MOZRAQ'}
+      data_bindings:
+      - {property: text, code: 'self.item[''count'']', writeback: false}
   - type: Spacer
     properties: {height: 32}
     name: spacer_2

@@ -11,7 +11,6 @@ class EntryView(EntryViewTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-
     # Any code you write here will run when the form opens.
 
   def edit_entry_button_click(self, **event_args):
@@ -29,7 +28,6 @@ class EntryView(EntryViewTemplate):
     # Update the entry if the user clicks save
     if save_clicked:
       anvil.server.call('update_entry', self.item, entry_copy)
-  
       # Now refresh the page
       self.refresh_data_bindings()
       self.parent.raise_event('x-edit-entry')
@@ -60,8 +58,6 @@ class EntryView(EntryViewTemplate):
     self.label_a_faire.text = f"""{self.label_a_faire.text}
     {self.item['count']}"""
 
-  def get_item_count(self):
-    return self.item['count']
 
 
 
