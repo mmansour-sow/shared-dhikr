@@ -24,7 +24,7 @@ class EntryView(EntryViewTemplate):
       content=EntryEdit(item=entry_copy),
       title="Update Entry",
       large=True,
-      buttons=[("Save", True), ("Cancel", False)]
+      buttons=[("Save", True), ("Annuler", False)]
     )
     # Update the entry if the user clicks save
     if save_clicked:
@@ -32,6 +32,9 @@ class EntryView(EntryViewTemplate):
   
       # Now refresh the page
       self.refresh_data_bindings()
+      self.label_a_faire.text = f"""{self.label_a_faire.text.splitlines()[0]}
+      {self.item['count']}"""
+      self.label_user_validated.text = f"{self.item['validated']} / {self.item['count']} validés"
       self.parent.raise_event('x-edit-entry')
 
   def delete_entry_button_click(self, **event_args):
@@ -39,7 +42,7 @@ class EntryView(EntryViewTemplate):
     # Get the user to confirm if they wish to delete the entry
     # If yes, raise the 'x-delete-entry' event on the parent 
     # (which is the entries_panel on Homepage)
-    if confirm(f"Are you sure you want to delete {self.item['name']}?"):
+    if confirm(f"Êtes-vous sûr de vouloir supprimer {self.item['name']}?"):
       self.parent.raise_event('x-delete-entry', entry=self.item)
 
   def label_user_validated_show(self, **event_args):
@@ -57,8 +60,7 @@ class EntryView(EntryViewTemplate):
 
   def label_a_faire_show(self, **event_args):
     """This method is called when the Label is shown on the screen"""
-    self.label_a_faire.text = f"""{self.label_a_faire.text}
-    {self.item['count']}"""
+    self.label_a_faire.text = f"""{self.label_a_faire.text}\n{self.item['count']}"""
 
   def get_item_count(self):
     return self.item['count']

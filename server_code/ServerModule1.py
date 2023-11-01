@@ -27,7 +27,10 @@ def update_entry(entry, entry_dict):
   # check that the entry given is really a row in the ‘entries’ table
   if app_tables.entries.has_row(entry):
     entry_dict['updated'] = datetime.now()
-    entry.update(**entry_dict)
+    if entry_dict['count'] >= entry['validated']:
+      entry.update(**entry_dict)
+    else:
+      raise Exception("Count cannot be less than validated count")
   else:
     raise Exception("Entry does not exist")
 
