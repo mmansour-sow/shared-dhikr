@@ -76,6 +76,6 @@ def search_users(query):
   if query:
     result = [
       x for x in result
-      if query in x['name']
+      if query.lower() in x['name'].lower()
     ]
   return result
