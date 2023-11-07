@@ -46,7 +46,8 @@ components:
     layout_properties: {grid_position: 'DYAFLH,HRTLAU'}
     components:
     - name: text_box_search
-      properties: {placeholder: Cherchez votre nom}
+      properties: {placeholder: Cherchez votre nom, italic: true, hide_text: false,
+        visible: true, role: null, font_size: null, foreground: '', background: ''}
       type: TextBox
       layout_properties: {grid_position: 'SCJZPF,GBJRNS'}
       event_bindings: {pressed_enter: search}
