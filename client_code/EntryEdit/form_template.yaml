@@ -1,32 +1,26 @@
-container:
-  type: ColumnPanel
-  properties: {col_widths: '{"LKKCYX":30}'}
 components:
-- type: Label
-  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
-    text: 'Nom:', font_size: null, font: '', spacing_above: small, icon_align: left,
-    spacing_below: small, italic: false, background: '', bold: false, underline: false,
-    icon: ''}
+- layout_properties: {grid_position: 'YGGYWR,DJWIVL'}
   name: label_1
-  layout_properties: {grid_position: 'YGGYWR,DJWIVL'}
-- type: TextBox
-  properties: {}
-  name: name_box
-  layout_properties: {grid_position: 'YGGYWR,LEWIHF'}
-  data_bindings:
-  - {property: text, code: 'self.item[''name'']', writeback: true}
+  properties: {align: left, background: '', bold: false, border: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: 'Nom:', tooltip: '', underline: false, visible: true}
+  type: Label
+- data_bindings:
+  - {code: 'self.item[''name'']', property: text, writeback: true}
   event_bindings: {}
-- type: Label
-  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
-    text: Nombre de fois, font_size: null, font: '', spacing_above: small, icon_align: left,
-    spacing_below: small, italic: false, background: '', bold: false, underline: false,
-    icon: ''}
-  name: label_2
-  layout_properties: {grid_position: 'ESBUON,LKKCYX'}
-- name: outlined_1
-  properties: {role: null, type: number, placeholder: ''}
+  layout_properties: {grid_position: 'YGGYWR,LEWIHF'}
+  name: name_box
+  properties: {}
   type: TextBox
+- layout_properties: {grid_position: 'ESBUON,LKKCYX'}
+  name: label_2
+  properties: {align: left, background: '', bold: false, border: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: Nombre de fois, tooltip: '', underline: false, visible: true}
+  type: Label
+- data_bindings:
+  - {code: 'self.item[''count'']', property: text, writeback: true}
   layout_properties: {grid_position: 'ESBUON,YNOGLQ'}
-  data_bindings:
-  - {property: text, code: 'self.item[''count'']', writeback: true}
+  name: outlined_1
+  properties: {placeholder: '', role: null, type: number}
+  type: TextBox
+container:
+  properties: {col_widths: '{"LKKCYX":30}'}
+  type: ColumnPanel
 is_package: true

@@ -1,75 +1,79 @@
-is_package: true
-container:
-  type: HtmlTemplate
-  properties: {html: '@theme:standard-page.html'}
 components:
-- type: ColumnPanel
-  properties: {col_widths: '{}'}
-  name: content_panel
-  layout_properties: {slot: default}
-  components:
-  - name: image_1
+- components:
+  - layout_properties: {grid_position: 'XGXWIX,JQPLUI'}
+    name: image_1
     properties: {source: _/theme/test_file.jpg}
     type: Image
-    layout_properties: {grid_position: 'XGXWIX,JQPLUI'}
-  - name: label_4
-    properties: {text: اللهم صل على سيدنا محمد الفاتح لما أغلق والخاتم لما سبق ناصر الحق بالحق والهادي إلى صراطك المستقيم وعلى آله حق قدره ومقداره العظيم.,
-      font_size: 40}
+  - layout_properties: {grid_position: 'MYESTE,XEPNTC'}
+    name: label_4
+    properties: {font_size: 40, text: اللهم صل على سيدنا محمد الفاتح لما أغلق والخاتم لما سبق ناصر الحق بالحق والهادي إلى صراطك المستقيم وعلى آله حق قدره ومقداره العظيم.}
     type: Label
-    layout_properties: {grid_position: 'MYESTE,XEPNTC'}
-  - name: label_6
-    properties: {text: 'Assalamu aleykoum à toute la Zawiya  En parallèle de la lecture
-        du coran qui sera initiée à l’occasion du gamou de Toulouse (le 18 Nov inshallah),
-        nous avons prévu de faire hadiya au Prophète Mouhammad PSL en récitant 124.000
-        salatoul fatikha. La récitation commence ce soir et sera clôturé le soir du
-        gamou inshallah. '}
+  - layout_properties: {grid_position: 'WYCIWQ,SXHZDC'}
+    name: label_6
+    properties: {text: 'Assalamu aleykoum à toute la Zawiya  En parallèle de la lecture du coran initiée à l’occasion du mois béni de la naissance du Prophète Mouhammad PSL, nous souhaitons accomplir collectivement 12.000 salatoul fatikhi. La récitation sera clôturée le soir de la clotûre de la burdah inshaAllah au Vendredi 13 Septembre. '}
     type: Label
-    layout_properties: {grid_position: 'WYCIWQ,SXHZDC'}
-  - name: label_pris
-    properties: {bold: true, font_size: 24, background: 'theme:Secondary', foreground: 'theme:Surface'}
-    type: Label
-    layout_properties: {grid_position: 'LRPOCU,MUWJVY'}
-    data_bindings: []
+  - data_bindings: []
     event_bindings: {show: label_pris_show}
-  - type: Button
-    properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
-      foreground: '', visible: true, text: 'Nouveau
-
-        ', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: large,
-      italic: false, background: '', bold: false, underline: false, icon: 'fa:plus-circle'}
-    name: add_entry_button
+    layout_properties: {grid_position: 'LRPOCU,MUWJVY'}
+    name: label_pris
+    properties: {background: 'theme:Secondary', bold: true, font_size: 24, foreground: 'theme:Surface'}
+    type: Label
+  - event_bindings: {click: add_entry_button_click}
     layout_properties: {grid_position: 'CBFHGL,NKFPMX'}
-    event_bindings: {click: add_entry_button_click}
-  - name: column_panel_1
+    name: add_entry_button
+    properties:
+      align: center
+      background: ''
+      bold: false
+      border: ''
+      enabled: true
+      font: ''
+      font_size: null
+      foreground: ''
+      icon: fa:plus-circle
+      icon_align: left
+      italic: false
+      role: filled-button
+      spacing_above: small
+      spacing_below: large
+      text: |
+        Nouveau
+      tooltip: ''
+      underline: false
+      visible: true
+    type: Button
+  - components:
+    - event_bindings: {pressed_enter: search}
+      layout_properties: {grid_position: 'SCJZPF,GBJRNS'}
+      name: text_box_search
+      properties: {background: '', font_size: null, foreground: '', hide_text: false, italic: true, placeholder: Reherchez votre nom, role: null, visible: true}
+      type: TextBox
+    - event_bindings: {click: search}
+      layout_properties: {grid_position: 'SCJZPF,UYVQVJ'}
+      name: button_search
+      properties: {icon: 'fa:search', text: Search}
+      type: Button
+    layout_properties: {grid_position: 'DYAFLH,HRTLAU'}
+    name: column_panel_1
     properties: {col_widths: '{"GBJRNS":40,"UYVQVJ":20}'}
     type: ColumnPanel
-    layout_properties: {grid_position: 'DYAFLH,HRTLAU'}
-    components:
-    - name: text_box_search
-      properties: {placeholder: Reherchez votre nom, italic: true, hide_text: false,
-        visible: true, role: null, font_size: null, foreground: '', background: ''}
-      type: TextBox
-      layout_properties: {grid_position: 'SCJZPF,GBJRNS'}
-      event_bindings: {pressed_enter: search}
-    - name: button_search
-      properties: {text: Search, icon: 'fa:search'}
-      type: Button
-      layout_properties: {grid_position: 'SCJZPF,UYVQVJ'}
-      event_bindings: {click: search}
-  - type: RepeatingPanel
-    properties: {role: null, tooltip: '', border: '', foreground: '', items: null,
-      visible: true, spacing_above: small, spacing_below: small, item_template: EntryView,
-      background: ''}
+  - layout_properties: {grid_position: 'XRGDXR,JQCHKL', slot: title}
     name: entries_panel
-    layout_properties: {slot: title, grid_position: 'XRGDXR,JQCHKL'}
-- type: FlowPanel
-  properties: {}
+    properties: {background: '', border: '', foreground: '', item_template: EntryView, items: null, role: null, spacing_above: small, spacing_below: small, tooltip: '', visible: true}
+    type: RepeatingPanel
+  layout_properties: {slot: default}
+  name: content_panel
+  properties: {col_widths: '{}'}
+  type: ColumnPanel
+- layout_properties: {slot: nav-right}
   name: navbar_links
-  layout_properties: {slot: nav-right}
-- type: Label
-  properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
-    visible: true, text: HADRA Tijâniyâ Toulouse, font_size: null, font: '', spacing_above: small,
-    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-    underline: false, icon: ''}
+  properties: {}
+  type: FlowPanel
+- layout_properties: {slot: title}
   name: label_1
-  layout_properties: {slot: title}
+  properties: {align: left, background: '', bold: false, border: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: title, spacing_above: small, spacing_below: small, text: HADRA Tijâniyâ Toulouse, tooltip: '', underline: false, visible: true}
+  type: Label
+container:
+  properties: {html: '@theme:standard-page.html'}
+  type: HtmlTemplate
+is_package: true

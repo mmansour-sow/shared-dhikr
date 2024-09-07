@@ -1,71 +1,66 @@
-correct_dependency_ids: {}
-dependencies: []
-services:
-- source: /runtime/services/tables.yml
-  client_config: {}
-  server_config: {}
-- source: /runtime/services/anvil/users.yml
-  client_config: {allow_signup: false, enable_automatically: true, use_email: true,
-    confirm_email: true}
-  server_config: {user_table: users}
-startup: {type: form, module: Homepage}
-package_name: News_App
 allow_embedding: false
-name: mawlid
-runtime_options:
-  version: 2
-  client_version: '3'
-  server_version: python3-sandbox
-  server_spec: null
-  server_spec_disabled: {requirements: '', base: python310-minimal}
-metadata: {title: Hadra tijani toulouse, logo_img: 'asset:test_file-logo.jpeg', description: 'Assalamu
-    aleykoum à toute la Zawiya  En parallèle de la lecture du coran qui sera initiée
-    à l’occasion du gamou de Toulouse (le 18 Nov inshallah), nous avons prévu de faire
-    hadiya au Prophète Mouhammad PSL en récitant 124.000 salatoul fatikha. La récitation
-    commence ce soir et sera clôturé le soir du gamou inshallah. '}
-startup_form: null
+correct_dependency_ids: {}
 db_schema:
   entries:
-    title: Entries
     client: search
-    server: full
     columns:
-    - name: name
-      admin_ui: {order: 0, width: 200}
+    - admin_ui: {order: 0, width: 200}
+      name: name
       type: string
-    - name: created
-      admin_ui: {width: 200}
+    - admin_ui: {width: 200}
+      name: created
       type: datetime
-    - name: updated
-      admin_ui: {width: 200}
+    - admin_ui: {width: 200}
+      name: updated
       type: datetime
-    - name: count
-      admin_ui: {order: 1.5, width: 200}
+    - admin_ui: {order: 1.5, width: 200}
+      name: count
       type: number
-    - name: validated
-      admin_ui: {order: 2.25, width: 200}
+    - admin_ui: {order: 2.25, width: 200}
+      name: validated
       type: number
+    server: full
+    title: Entries
   users:
     client: none
-    server: full
     columns:
-    - name: email
-      admin_ui: {order: 0, width: 200}
+    - admin_ui: {order: 0, width: 200}
+      name: email
       type: string
-    - name: enabled
-      admin_ui: {order: 1, width: 200}
+    - admin_ui: {order: 1, width: 200}
+      name: enabled
       type: bool
-    - name: last_login
-      admin_ui: {order: 2, width: 200}
+    - admin_ui: {order: 2, width: 200}
+      name: last_login
       type: datetime
-    - name: password_hash
-      admin_ui: {order: 3, width: 200}
+    - admin_ui: {order: 3, width: 200}
+      name: password_hash
       type: string
-    - name: n_password_failures
-      admin_ui: {order: 4, width: 200}
+    - admin_ui: {order: 4, width: 200}
+      name: n_password_failures
       type: number
-    - name: confirmed_email
-      admin_ui: {order: 5, width: 200}
+    - admin_ui: {order: 5, width: 200}
+      name: confirmed_email
       type: bool
+    server: full
     title: Users
+dependencies: []
+metadata: {description: 'Assalamu aleykoum à toute la Zawiya  En parallèle de la lecture du coran qui sera initiée à l’occasion du gamou de Toulouse (le 18 Nov inshallah), nous avons prévu de faire hadiya au Prophète Mouhammad PSL en récitant 124.000 salatoul fatikha. La récitation commence ce soir et sera clôturé le soir du gamou inshallah. ', logo_img: 'asset:test_file-logo.jpeg', title: Hadra tijani toulouse}
+name: mawlid
+package_name: News_App
 renamed: true
+runtime_options:
+  client_version: '3'
+  server_spec: null
+  server_spec_disabled: {base: python310-minimal, requirements: ''}
+  server_version: python3-sandbox
+  version: 2
+services:
+- client_config: {}
+  server_config: {}
+  source: /runtime/services/tables.yml
+- client_config: {allow_signup: false, confirm_email: true, enable_automatically: true, use_email: true}
+  server_config: {user_table: users}
+  source: /runtime/services/anvil/users.yml
+startup: {module: Homepage, type: form}
+startup_form: null
