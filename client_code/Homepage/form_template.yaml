@@ -10,7 +10,7 @@ components:
     type: Label
   - layout_properties: {grid_position: 'WYCIWQ,SXHZDC'}
     name: label_6
-    properties: {text: 'Assalamu aleykoum à toute la Zawiya  En parallèle de la lecture du coran initiée à l’occasion du mois béni de la naissance du Prophète Mouhammad PSL, nous souhaitons accomplir collectivement 12.000 salatoul fatikhi. La récitation sera clôturée le soir de la clotûre de la burdah inshaAllah au Vendredi 13 Septembre. '}
+    properties: {bold: false, text: 'AsSalamu Alaykum à tous. En parallèle de la lecture du Coran initiée à l''occasion du Gamou annuel de Toulouse, qui célèbre la naissance du Prophète Muhammad (paix et salut sur lui et sur sa famille), nous avons pour objectif d''accomplir collectivement 124 000 récitations du Salatoul Fatihi. La clôture de cette récitation se fera, inshaAllah, le soir du Gamou, le samedi 26 octobre. Qu''Allah accepte nos invocations et nous accorde Ses bénédictions. ', visible: true}
     type: Label
   - data_bindings: []
     event_bindings: {show: label_pris_show}
