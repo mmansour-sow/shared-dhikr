@@ -6,11 +6,13 @@ components:
     type: Image
   - layout_properties: {grid_position: 'MYESTE,XEPNTC'}
     name: label_4
-    properties: {font_size: 40, text: اللهم صل على سيدنا محمد الفاتح لما أغلق والخاتم لما سبق ناصر الحق بالحق والهادي إلى صراطك المستقيم وعلى آله حق قدره ومقداره العظيم.}
+    properties:
+      font_size: 40
+      text: "(Coran 3:173)\n ٱلَّذِينَ قَالَ لَهُمُ ٱلنَّاسُ إِنَّ ٱلنَّاسَ قَدْ جَمَعُوا۟ لَكُمْ فَٱخْشَوْهُمْ فَزَادَهُمْ إِيمَٰنًا وَقَالُوا۟ حَسْبُنَا ٱللَّهُ وَنِعْمَ ٱلْوَكِيلُ \n\"Ceux auxquels l'on disait : 'Les gens se sont rassemblés contre vous, craignez-les.' Cela ne fit qu'accroître leur foi et ils dirent : 'Allah nous suffit, et Il est le meilleur protecteur (Hasbunallahu wa ni'mal Wakil).'\" \nاللهم صل على سيدنا محمد الفاتح لما أغلق والخاتم لما سبق ناصر الحق بالحق والهادي إلى صراطك المستقيم وعلى آله حق قدره ومقداره العظيم."
     type: Label
   - layout_properties: {grid_position: 'WYCIWQ,SXHZDC'}
     name: label_6
-    properties: {bold: false, text: 'AsSalamu Alaykum à tous. En parallèle de la lecture du Coran initiée à l''occasion du Gamou annuel de Toulouse, qui célèbre la naissance du Prophète Muhammad (paix et salut sur lui et sur sa famille), nous avons pour objectif d''accomplir collectivement 124 000 récitations du Salatoul Fatihi. La clôture de cette récitation se fera, inshaAllah, le soir du Gamou, le samedi 26 octobre. Qu''Allah accepte nos invocations et nous accorde Ses bénédictions. ', visible: true}
+    properties: {bold: false, text: 'AsSalamu Alaykum à tous. En cette nouvelle année 1447 AH, nous avons pour objectif d''accomplir collectivement 124 000 récitations de HasbounAllâhou wa nihmal wakil. La clôture de cette récitation se fera, inshaAllah, demain, le dimanche 06 juillet, jour de Âchoura. Qu''Allah accepte nos invocations et nous accorde Ses bénédictions. ', visible: true}
     type: Label
   - data_bindings: []
     event_bindings: {show: label_pris_show}
