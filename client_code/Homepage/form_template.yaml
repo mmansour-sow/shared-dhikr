@@ -12,7 +12,7 @@ components:
     type: Label
   - layout_properties: {grid_position: 'WYCIWQ,SXHZDC'}
     name: label_6
-    properties: {bold: false, text: 'AsSalamu Alaykum à tous. En cette nouvelle année 1447 AH, nous avons pour objectif d''accomplir collectivement 124 000 récitations de HasbounAllâhou wa nihmal wakil. La clôture de cette récitation se fera, inshaAllah, demain, le dimanche 06 juillet, jour de Âchoura. Qu''Allah accepte nos invocations et nous accorde Ses bénédictions. ', visible: true}
+    properties: {bold: false, text: 'AsSalamu Alaykum à tous. En cette nouvelle année 1447 AH, nous avons pour objectif d''accomplir collectivement 41000 récitations de HasbounAllâhou wa nihmal wakil. La clôture de cette récitation se fera, inshaAllah, demain, le dimanche 06 juillet, jour de Âchoura. Qu''Allah accepte nos invocations et nous accorde Ses bénédictions. ', visible: true}
     type: Label
   - data_bindings: []
     event_bindings: {show: label_pris_show}
