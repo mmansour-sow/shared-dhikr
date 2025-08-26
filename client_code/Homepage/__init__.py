@@ -51,7 +51,7 @@ class Homepage(HomepageTemplate):
     """This method is called when the Label is shown on the screen"""
     # self.label_pris.text = anvil.server.call('get_total_count')
     self.label_pris.text = f"""
-    Objectif:                  41000
+    Objectif:                  124000
     Total pris:               {anvil.server.call('get_total_count')}
     Restant à valider : {anvil.server.call('get_total_remaining_to_validate')}
     Total validé :           {anvil.server.call('get_total_validated')}
