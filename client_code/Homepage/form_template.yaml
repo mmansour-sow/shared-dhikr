@@ -10,7 +10,7 @@ components:
     type: Label
   - layout_properties: {grid_position: 'WYCIWQ,SXHZDC'}
     name: label_6
-    properties: {bold: false, text: 'Assalamu aleykoum à toute la Zawiya  En parallèle de la lecture du coran initiée en ce mois du mawlid Nabi ﷺ, nous avons prévu de faire hadiya au Prophète Mouhammad PSL en récitant 124.000 salatoul fatikha. La récitation commence ce soir et sera clôturé le soir du gamou inshallah. ', visible: true}
+    properties: {bold: false, text: 'Assalamu aleykoum. Nous avons prévu de faire hadiya au Prophète Mouhammad ﷺ en récitant 124.000 salatoul fatikha. La récitation commence ce soir et sera clôturé le soir du gamou inshallah. ', visible: true}
     type: Label
   - data_bindings: []
     event_bindings: {show: label_pris_show}

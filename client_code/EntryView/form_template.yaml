@@ -14,7 +14,7 @@ components:
     event_bindings: {show: label_a_faire_show}
     layout_properties: {grid_position: 'MHWRRD,XGUAPS'}
     name: label_a_faire
-    properties: {align: left, bold: true, foreground: 'theme:Primary', italic: true, text: HasbounAllâhou wa nihmal wakil, underline: false}
+    properties: {align: left, bold: true, foreground: 'theme:Primary', italic: true, text: Salatul fatiha, underline: false}
     type: Label
   - data_bindings: []
     event_bindings: {show: label_user_validated_show}
